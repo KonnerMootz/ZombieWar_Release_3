@@ -354,7 +354,7 @@ class Weapon {
             "Pistol", "Axe", "Crowbar", "Frying Pan"};
 
     Weapon() {
-        int randGun = rand.nextInt(6);
+        int randGun = rand.nextInt(7);
         weaponName = weapons[randGun];
 
         switch (weaponName) {
@@ -406,12 +406,7 @@ class Weapon {
         Random random = new Random();
         int compareAccuracy = random.nextInt(100);
 
-        if (accuracy >= compareAccuracy) {
-            weaponHit = true;
-        }
-        else {
-            weaponHit = false;
-        }
+        weaponHit = accuracy >= compareAccuracy;
 
         return weaponHit;
     }
